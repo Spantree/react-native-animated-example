@@ -33,6 +33,11 @@ class SelectionScreen extends Component {
             <FlatButton text="Colors" onPress={() => NavigationActions.colorInterpolation()} />
           </View>
 
+          <View style={styles.buttonGroup}>
+            <Text style={styles.headerText}>Events</Text>
+            <FlatButton text="Bind Position (spring back)" onPress={() => NavigationActions.bindPosition()} />
+          </View>
+
         </View>
       </ScrollView>
     )

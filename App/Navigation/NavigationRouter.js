@@ -17,6 +17,8 @@ import ComplexInterpolationScreen from '../Containers/ComplexInterpolationScreen
 import DegreesInterpolationScreen from '../Containers/DegreesInterpolationScreen'
 import ColorInterpolationScreen from '../Containers/ColorInterpolationScreen'
 
+import BindPositionScreen from '../Containers/BindPositionScreen'
+
 class NavigationRouter extends Component {
   render () {
     return (
@@ -36,6 +38,8 @@ class NavigationRouter extends Component {
           <Scene key="complexInterpolation" component={ComplexInterpolationScreen} title="Complex Interpolation" />
           <Scene key="degreesInterpolation" component={DegreesInterpolationScreen} title="Degree Interpolation" />
           <Scene key="colorInterpolation" component={ColorInterpolationScreen} title="Color Interpolation" />
+
+          <Scene key="bindPosition" component={BindPositionScreen} title="Bind Position" />
 
         </Scene>
       </Router>
