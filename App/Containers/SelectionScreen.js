@@ -36,6 +36,7 @@ class SelectionScreen extends Component {
           <View style={styles.buttonGroup}>
             <Text style={styles.headerText}>Events</Text>
             <FlatButton text="Bind Position (spring back)" onPress={() => NavigationActions.bindPosition()} />
+            <FlatButton text="Chat Heads" onPress={() => NavigationActions.eventChatHeads()} />
           </View>
 
         </View>

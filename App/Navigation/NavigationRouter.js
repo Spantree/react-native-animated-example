@@ -18,6 +18,7 @@ import DegreesInterpolationScreen from '../Containers/DegreesInterpolationScreen
 import ColorInterpolationScreen from '../Containers/ColorInterpolationScreen'
 
 import BindPositionScreen from '../Containers/BindPositionScreen'
+import EventChatHeadsScreen from '../Containers/EventChatHeadsScreen'
 
 class NavigationRouter extends Component {
   render () {
@@ -40,6 +41,7 @@ class NavigationRouter extends Component {
           <Scene key="colorInterpolation" component={ColorInterpolationScreen} title="Color Interpolation" />
 
           <Scene key="bindPosition" component={BindPositionScreen} title="Bind Position" />
+          <Scene key="eventChatHeads" component={EventChatHeadsScreen} title="Chat Heads" />
 
         </Scene>
       </Router>
