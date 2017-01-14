@@ -4,7 +4,7 @@ import { StyleSheet, Animated, TouchableWithoutFeedback, View, Easing, Dimension
 import FlatButton from '../Components/FlatButton'
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
-const ELEMENT_WIDTH = 50;
+const ELEMENT_WIDTH = 250;
 
 class DegreesInterpolationScreen extends Component {
   constructor() {
