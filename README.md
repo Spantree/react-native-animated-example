@@ -16,7 +16,6 @@ npm install -g react-native-cli
 ## Setup
 
 ```
-cd ReactNativeAnimatedExample
 yarn         # or npm install if you don't have yarn
 react-native run-ios
 ```
