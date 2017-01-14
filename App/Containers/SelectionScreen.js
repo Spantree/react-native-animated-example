@@ -25,6 +25,14 @@ class SelectionScreen extends Component {
             <FlatButton text="Stagger" onPress={() => NavigationActions.stagger()} />
           </View>
 
+          <View style={styles.buttonGroup}>
+            <Text style={styles.headerText}>Interpolations</Text>
+            <FlatButton text="Basic Value" onPress={() => NavigationActions.basicInterpolation()} />
+            <FlatButton text="Complex with Dead Zones" onPress={() => NavigationActions.complexInterpolation()} />
+            <FlatButton text="Degrees" onPress={() => NavigationActions.degreesInterpolation()} />
+            <FlatButton text="Colors" onPress={() => NavigationActions.colorInterpolation()} />
+          </View>
+
         </View>
       </ScrollView>
     )

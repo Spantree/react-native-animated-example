@@ -3,12 +3,19 @@ import { Scene, Router } from 'react-native-router-flux'
 
 // screens identified by the router
 import SelectionScreen from '../Containers/SelectionScreen'
+
 import SpringScreen from '../Containers/SpringScreen'
 import DecayScreen from '../Containers/DecayScreen'
 import TimingScreen from '../Containers/TimingScreen'
+
 import ParallelScreen from '../Containers/ParallelScreen'
 import SequenceScreen from '../Containers/SequenceScreen'
 import StaggerScreen from '../Containers/StaggerScreen'
+
+import BasicInterpolationScreen from '../Containers/BasicInterpolationScreen'
+import ComplexInterpolationScreen from '../Containers/ComplexInterpolationScreen'
+import DegreesInterpolationScreen from '../Containers/DegreesInterpolationScreen'
+import ColorInterpolationScreen from '../Containers/ColorInterpolationScreen'
 
 class NavigationRouter extends Component {
   render () {
@@ -24,6 +31,12 @@ class NavigationRouter extends Component {
           <Scene key="parallel" component={ParallelScreen} title="Parallel" />
           <Scene key="sequence" component={SequenceScreen} title="Sequence" />
           <Scene key="stagger" component={StaggerScreen} title="Stagger" />
+
+          <Scene key="basicInterpolation" component={BasicInterpolationScreen} title="Basic Interpolation" />
+          <Scene key="complexInterpolation" component={ComplexInterpolationScreen} title="Complex Interpolation" />
+          <Scene key="degreesInterpolation" component={DegreesInterpolationScreen} title="Degree Interpolation" />
+          <Scene key="colorInterpolation" component={ColorInterpolationScreen} title="Color Interpolation" />
+
         </Scene>
       </Router>
     )
