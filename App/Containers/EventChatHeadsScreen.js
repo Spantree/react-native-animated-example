@@ -2,6 +2,23 @@ import React, { Component } from 'react'
 import { PanResponder, StyleSheet, Animated, TouchableWithoutFeedback, View } from 'react-native'
 
 const ELEMENT_WIDTH = 100;
+const NUM_HEADS = 6;
+const HEAD_COLORS = [
+   "coral",
+   "cornflowerblue",
+   "cornsilk",
+   "crimson",
+   "cyan",
+   "darkblue",
+   "darkcyan",
+   "darkgoldenrod",
+   "darkgray",
+   "darkgreen",
+   "darkgrey",
+   "darkkhaki",
+   "darkmagenta",
+   "darkolivegreen",
+];
 
 class EventChatHeadsScreen extends Component {
   constructor() {
@@ -9,8 +26,12 @@ class EventChatHeadsScreen extends Component {
 
     this.state = {
       position: new Animated.ValueXY(),
-      headPosition: new Animated.ValueXY()
+      headPositions: []
     };
+
+    for(let i = 0; i < NUM_HEADS; i++) {
+      this.state.headPositions.push(new Animated.ValueXY());
+    }
   }
   resetPosition() {
     this.state.position.setValue({x: 0, y: 0})
@@ -30,27 +51,42 @@ class EventChatHeadsScreen extends Component {
       }
     })
 
-    Animated.spring(
-      this.state.headPosition,
-      {
-        toValue: this.state.position,
-        friction: 8,
-        tension: 100
+    this.state.headPositions.forEach((headPosition, idx) => {
+      let input;
+      if(idx === 0) {
+        input = this.state.position;
+      } else {
+        input = this.state.headPositions[idx - 1];
       }
-    ).start();
+
+      Animated.spring(
+        this.state.headPositions[idx],
+        {
+          toValue: input,
+          friction: 8,
+          tension: 100
+        }
+      ).start();
+    });
   }
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.animationContainer}>
-            <Animated.View style={[styles.animated, {
-              width: ELEMENT_WIDTH,
-              height: ELEMENT_WIDTH,
-              transform: [
-                {translateX: this.state.headPosition.x},
-                {translateY: this.state.headPosition.y},
-              ]
-            }]} {...this._panResponder.panHandlers}/>
+          {this.state.headPositions.map((position, idx) => {
+            return(
+              <Animated.View key={idx} style={[styles.animated, {
+                width: ELEMENT_WIDTH,
+                height: ELEMENT_WIDTH,
+                position: 'absolute',
+                backgroundColor: HEAD_COLORS[idx],
+                transform: [
+                  {translateX: this.state.headPositions[idx].x},
+                  {translateY: this.state.headPositions[idx].y},
+                ]
+              }]} {...this._panResponder.panHandlers}/>
+            );
+          })}
         </View>
       </View>
     )

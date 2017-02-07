@@ -18,6 +18,7 @@ import DegreesInterpolationScreen from '../Containers/DegreesInterpolationScreen
 import ColorInterpolationScreen from '../Containers/ColorInterpolationScreen'
 
 import BindPositionScreen from '../Containers/BindPositionScreen'
+import SpringBindPositionScreen from '../Containers/SpringBindPositionScreen'
 import EventChatHeadsScreen from '../Containers/EventChatHeadsScreen'
 
 class NavigationRouter extends Component {
@@ -41,6 +42,7 @@ class NavigationRouter extends Component {
           <Scene key="colorInterpolation" component={ColorInterpolationScreen} title="Color Interpolation" />
 
           <Scene key="bindPosition" component={BindPositionScreen} title="Bind Position" />
+          <Scene key="springBindPosition" component={SpringBindPositionScreen} title="Spring-bind Position" />
           <Scene key="eventChatHeads" component={EventChatHeadsScreen} title="Chat Heads" />
 
         </Scene>
