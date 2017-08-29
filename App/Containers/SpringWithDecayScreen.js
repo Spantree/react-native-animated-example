@@ -18,6 +18,11 @@ class SpringWithDecayScreen extends Component {
       onStartShouldSetPanResponderCapture: (evt, gestureState) => true,
       onMoveShouldSetPanResponder: (evt, gestureState) => true,
       onMoveShouldSetPanResponderCapture: (evt, gestureState) => true,
+      onPanResponderGrant:() => {
+        //In the case that the decay is currently happening, this will allow the user
+        //to "catch" the element and manipulate it as expected.
+        this.state.position.stopAnimation(() => this.state.position.extractOffset());
+      },
       onPanResponderMove: Animated.event([
         null,
         {dx: this.state.position.x, dy: this.state.position.y},
