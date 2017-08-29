@@ -33,9 +33,6 @@ class EventChatHeadsScreen extends Component {
       this.state.headPositions.push(new Animated.ValueXY());
     }
   }
-  resetPosition() {
-    this.state.position.setValue({x: 0, y: 0})
-  }
   componentWillMount() {
     this._panResponder = PanResponder.create({
       onStartShouldSetPanResponder: (evt, gestureState) => true,
@@ -47,7 +44,7 @@ class EventChatHeadsScreen extends Component {
         {dx: this.state.position.x, dy: this.state.position.y},
       ]),
       onPanResponderRelease: () => {
-        this.resetPosition()
+        this.state.position.extractOffset();
       }
     })
 
