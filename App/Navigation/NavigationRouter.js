@@ -18,7 +18,9 @@ import DegreesInterpolationScreen from '../Containers/DegreesInterpolationScreen
 import ColorInterpolationScreen from '../Containers/ColorInterpolationScreen'
 
 import BindPositionScreen from '../Containers/BindPositionScreen'
+import BindPositionWithDecayScreen from '../Containers/BindPositionWithDecayScreen'
 import SpringBindPositionScreen from '../Containers/SpringBindPositionScreen'
+import SpringWithDecayScreen from '../Containers/SpringWithDecayScreen'
 import EventChatHeadsScreen from '../Containers/EventChatHeadsScreen'
 
 class NavigationRouter extends Component {
@@ -42,7 +44,9 @@ class NavigationRouter extends Component {
           <Scene key="colorInterpolation" component={ColorInterpolationScreen} title="Color Interpolation" />
 
           <Scene key="bindPosition" component={BindPositionScreen} title="Bind Position" />
+          <Scene key="bindPositionWithDecay" component={BindPositionWithDecayScreen} title="Bind Position with Decay" />
           <Scene key="springBindPosition" component={SpringBindPositionScreen} title="Spring-bind Position" />
+          <Scene key="springWithDecay" component={SpringWithDecayScreen} title="Spring-bind Position with Decay" />
           <Scene key="eventChatHeads" component={EventChatHeadsScreen} title="Chat Heads" />
 
         </Scene>
